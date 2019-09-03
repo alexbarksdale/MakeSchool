@@ -1,0 +1,28 @@
+/*Header Properties*/
+.header-container {
+    background: url('/BEW1.1/characterresume/img/headerimg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 529px;
+}
+
+.character-info {
+    color: #fff;
+    margin-top: 13%;
+}
+
+.character-info p {
+    font-size: 25px;
+    color: #d2d2d2;
+}
+/*CharacterBio Properties */
+.characterbio-container .container {
+    background-color: #f0f0f0;
+}
+
+.bio h1 {
+    margin-top: 25px;
+    font-size: 25px;
+    background-color: #fff;
+    padding: 25px 15px 25px 15px;
+    border-radius: 6px;
+}
