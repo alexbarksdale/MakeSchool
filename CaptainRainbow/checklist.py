@@ -42,32 +42,57 @@ def user_input(prompt):
 
 
 def select(function_code):
-    if function_code == "C":
+    # Add to the checklist
+    if function_code.lower() == "c":
         input_item = user_input("Input item: ")
         create(input_item)
-
-    elif function_code == "R":
+    # Read from the checklist
+    elif function_code.lower() == "r":
         item_index = user_input("Index Number?: ")
-
-        read(int(item_index))
-
-    elif function_code == "P":
+        # Checks for invalid input
+        if int(item_index) >= len(checklist):
+            print(Fore.RED + 'Invalid input' + Fore.RESET)
+        else:
+            read(int(item_index))
+    # List items in the checklist
+    elif function_code.lower() == "p":
         list_all_items()
+    # Removes an item from the checklist
+    elif function_code.lower() == "d":
+        destroy_item = user_input('What index do you want to remove?: ')
 
-    elif function_code == "Q":
+        if int(destroy_item) >= len(checklist):
+            print(Fore.RED + 'Invalid input' + Fore.RESET)
+        else:
+            destroy(int(destroy_item))
+            print('Removed index: ' + Fore.GREEN + destroy_item + Fore.RESET)
+    # Updates an item from the checklist
+    elif function_code.lower() == "u":
+        get_index = user_input('What index do you want to update?: ')
+
+        if int(get_index) >= len(checklist):
+            print(Fore.RED + 'Invalid input' + Fore.RESET)
+        else:
+            update_item = user_input(
+                'Update item ' + Fore.YELLOW + get_index + Fore.RESET + ' to: ')
+            update(int(get_index), update_item)
+    # Quit the checklist
+    elif function_code.lower() == "q":
         return False
     else:
         print("Unknown Option")
     return True
 
-# Listens to the user input and give them a display for CRUD
+# Listens to the user input and give them a display
 
 
 def main():
     running = True
     while running:
         selection = user_input(
-            "Press" + Fore.RED + " C " + Fore.RESET + "to add to list," + Fore.RED + " R " + Fore.RESET + "to Read from list," + Fore.RED + " P " + Fore.RESET + "to display list, and" + Fore.RED + " Q " + Fore.RESET + "to quit: ")
+            "Press" + Fore.RED + " C " + Fore.RESET + "to add to list," + Fore.RED +
+            " R " + Fore.RESET + "to Read from list," + Fore.RED + " P " + Fore.RESET + "to display list" + Fore.RESET + Fore.RED + " D " +
+            Fore.RESET + "to remove an item" + Fore.RED + " U " + Fore.RESET + "to update an item, and" + Fore.RED + " Q " + Fore.RESET + "to quit: ")
         running = select(selection)
 
 
