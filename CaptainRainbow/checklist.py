@@ -84,35 +84,43 @@ def select(function_code):
     return True
 
 
-# def test():
-#     # Creates a checklist
-#     create('Remember to clean dishes')
-#     create('Pay apartments bills')
+def test():
+    print('Testing now!')
 
-#     # Updates the 2nd item on the checklist
-#     update(1, 'Pay apartments bills')
+    # Creates a checklist
+    create('Remember to clean dishes')
+    create('Pay apartments bills')
+    list_all_items()
 
-#     # Testing delete functionality
-#     destroy(0)
+    # Updates the 2nd item on the checklist
+    update(1, 'Pay apartments bills')
+    list_all_items()
 
-#     # Testing specific select functions
-#     select('d')
-#     select('r')
-#     select('q')
+    # Testing delete functionality
+    destroy(0)
+    list_all_items()
+    # Testing specific select functions
+    create('Testing')
+
+    select('d')
+    select('r')
+    select('q')
+
+    read(0)
 
 
-# test()
+test()
 
 # Listens to the user input and give them a display
 
-def main():
-    running = True
-    while running:
-        selection = user_input(
-            "Press" + Fore.RED + " C " + Fore.RESET + "to add to list," + Fore.RED +
-            " R " + Fore.RESET + "to Read from list," + Fore.RED + " P " + Fore.RESET + "to display list" + Fore.RESET + Fore.RED + " D " +
-            Fore.RESET + "to remove an item" + Fore.RED + " U " + Fore.RESET + "to update an item, and" + Fore.RED + " Q " + Fore.RESET + "to quit: ")
-        running = select(selection)
+# def main():
+#     running = True
+#     while running:
+#         selection = user_input(
+#             "Press" + Fore.RED + " C " + Fore.RESET + "to add to list," + Fore.RED +
+#             " R " + Fore.RESET + "to Read from list," + Fore.RED + " P " + Fore.RESET + "to display list" + Fore.RESET + Fore.RED + " D " +
+#             Fore.RESET + "to remove an item" + Fore.RED + " U " + Fore.RESET + "to update an item, and" + Fore.RED + " Q " + Fore.RESET + "to quit: ")
+#         running = select(selection)
 
 
-main()
+# main()
