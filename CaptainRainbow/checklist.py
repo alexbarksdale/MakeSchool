@@ -83,8 +83,6 @@ def select(function_code):
         print("Unknown Option")
     return True
 
-# Listens to the user input and give them a display
-
 
 # def test():
 #     # Creates a checklist
@@ -105,6 +103,7 @@ def select(function_code):
 
 # test()
 
+# Listens to the user input and give them a display
 
 def main():
     running = True
