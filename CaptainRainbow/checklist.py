@@ -86,6 +86,26 @@ def select(function_code):
 # Listens to the user input and give them a display
 
 
+# def test():
+#     # Creates a checklist
+#     create('Remember to clean dishes')
+#     create('Pay apartments bills')
+
+#     # Updates the 2nd item on the checklist
+#     update(1, 'Pay apartments bills')
+
+#     # Testing delete functionality
+#     destroy(0)
+
+#     # Testing specific select functions
+#     select('d')
+#     select('r')
+#     select('q')
+
+
+# test()
+
+
 def main():
     running = True
     while running:
