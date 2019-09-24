@@ -17,28 +17,35 @@ def index():
         greeting=greeting)
 
 
-compliments = ['dope', 'nice', 'sick', 'rad']
-wisdom_list = ['Use both feet to walk',
-               'Use your eyes to see', 'Make sure to breath']
+# compliments = ['dope', 'nice', 'sick', 'rad']
+# wisdom_list = ['Use both feet to walk',
+#                'Use your eyes to see', 'Make sure to breath']
 
 
-@app.route('/compliment')
+# @app.route('/compliment')
+# def get_compliment():
+#     # Give the user a compliment
+#     name = request.args.get('name')
+#     show_compliments = request.args.get('show_compliments')
+#     compliments_to_show = sample(compliments, 3)
+
+#     return render_template(
+#         'compliments.html',
+#         name=name,
+#         show_compliments=show_compliments,
+#         compliments=compliments_to_show)
+
+compliments = ['coolio', 'smashing', 'neato', 'fantabulous']
+
+
 def get_compliment():
-    # Give the user a compliment
-    name = request.args.get('name')
-    show_compliments = request.args.get('show_compliments')
-    compliments_to_show = sample(compliments, 3)
-
-    return render_template(
-        'compliments.html',
-        name=name,
-        show_compliments=show_compliments,
-        compliments=compliments_to_show)
+    compliment = compliments[0]
+    return f'Hello there, user! You are so {compliment}!'
 
 
-def get_horoscope():
-    wisdom = choice(wisdom_list)
-    return f'Here\'s some widsom: {wisdom}'
+# def get_horoscope():
+#     wisdom = choice(wisdom_list)
+#     return f'Here\'s some widsom: {wisdom}'
 
 
 if __name__ == "__main__":
