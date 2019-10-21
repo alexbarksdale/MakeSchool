@@ -8,5 +8,4 @@ class Person(object):
 
 
 John = Person('greg')
-
 John.say_hello()
